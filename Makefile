@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlebre <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 11:24:43 by jlebre            #+#    #+#              #
-#    Updated: 2021/12/21 11:25:01 by jlebre           ###   ########.fr        #
+#    Updated: 2021/12/22 15:24:02 by jlebre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ LIB1	= ar -rcs
 LIB2	= ranlib
 RM		= /bin/rm -f
 
-NAME	= libft.a
+NAME	= libftprintf.a
 
 INCLUDE	= libftprintf.h
-SRCS	= 
+SRCS	= ft_printf.c
 
 OBJS	= $(SRCS:.c=.o)
 

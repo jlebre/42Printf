@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:16:48 by jlebre            #+#    #+#             */
-/*   Updated: 2021/12/21 18:18:49 by jlebre           ###   ########.fr       */
+/*   Updated: 2021/12/22 15:22:27 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 # include "libft.h"
 # include <stdarg.h>
 
-
+int ft_printf(const char *, ...);
 
 #endif
