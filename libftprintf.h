@@ -12,15 +12,15 @@
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
-# include "libft.h"
 # include <stdarg.h>
 
+int	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
 int		ft_printf(const char *, ...);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-int		ft_putnbr_base_fd(int n, int fd);
+int	ft_putchar_fd(char c, int fd);
+int	ft_putstr_fd(char *s, int fd);
+int	ft_putnbr_fd(int n, int k, int fd);
+int	ft_putnbr_base_fd(int n, char *base, int k, int fd);
 void	ft_putpointer_fd(char *ptr, int fd);
 
 #endif

@@ -21,15 +21,15 @@ static int check(char c, va_list arg)
     else if (c == 'p')
             return (ft_putpointer_fd(va_arg(arg, int), 1));
     else if (c == 'd')
-        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789", 1));
+        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789", 0, 1));
     else if (c == 'i')
-        return (ft_putnbr_fd(va_arg(arg, int), 1));
+        return (ft_putnbr_fd(va_arg(arg, int), 0, 1));
     else if (c == 'u') //unsigned decimal
-        
+        return (1);
     else if (c == 'x')
-        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789abcdef", 1));
+        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789abcdef", 0, 1));
     else if (c == 'X')
-        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789ABCDEF", 1));
+        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789ABCDEF", 0, 1));
     else if (c == '%')
         return (ft_putchar_fd(c, 1));
 }
