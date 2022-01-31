@@ -17,24 +17,21 @@ static int check(char c, va_list arg)
     if (c == 'c')
         return (ft_putchar_fd(va_arg(arg, int), 1));
     else if (c == 's')
-        ft_putstr();
+        return (ft_putstr_fd(va_arg(arg, char), 1));
     else if (c == 'p')
-        {
-            write(1, "0x", 2);
-            ft_putnbr_base();
-        }
+            return (ft_putpointer_fd(va_arg(arg, int), 1));
     else if (c == 'd')
-        ft_putnbr_decimal();
+        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789", 1));
     else if (c == 'i')
-        ft_putnbr();
-    else if (c == 'u')
-        ft_putnbr_decimal();
+        return (ft_putnbr_fd(va_arg(arg, int), 1));
+    else if (c == 'u') //unsigned decimal
+        
     else if (c == 'x')
-        ft_putnbr_base();
+        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789abcdef", 1));
     else if (c == 'X')
-        ft_putnbr_base();
+        return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789ABCDEF", 1));
     else if (c == '%')
-        ft_putchar();
+        return (ft_putchar_fd(c, 1));
 }
 
 int	ft_printf(const char *c, ...)

@@ -19,7 +19,8 @@ RM		= /bin/rm -f
 NAME	= libftprintf.a
 
 INCLUDE	= libftprintf.h
-SRCS	= ft_printf.c
+SRCS	= ft_printf.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr.c /
+			ft_putnbr_base.c ft_putpointer.c
 
 OBJS	= $(SRCS:.c=.o)
 

@@ -15,6 +15,12 @@
 # include "libft.h"
 # include <stdarg.h>
 
-int ft_printf(const char *, ...);
+char	*ft_strchr(const char *s, int c);
+int		ft_printf(const char *, ...);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+int		ft_putnbr_base_fd(int n, int fd);
+void	ft_putpointer_fd(char *ptr, int fd);
 
 #endif
