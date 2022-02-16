@@ -18,13 +18,12 @@ RM		= /bin/rm -f
 
 NAME	= libftprintf.a
 
-INCLUDE	= libftprintf.h
-SRCS	= ft_printf.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr.c /
-			ft_putnbr_base.c ft_putpointer.c
+INCLUDE	= ft_printf.h
+SRCS	= ft_printf.c func_extra.c func_extra1.c
 
 OBJS	= $(SRCS:.c=.o)
 
-all:		$(NAME)
+all:		$(NAME) clean
 
 $(NAME):	$(OBJS) $(INCLUDE)
 			$(LIB1) $(NAME) $(OBJS)

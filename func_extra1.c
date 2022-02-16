@@ -1,9 +1,10 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_putpointer_fd(char *ptr, int fd)
+int	ft_putpointer_fd(char *ptr, int fd)
 {
-	ft_putchar("0x");
-	ft_putnbr_base_fd(ptr, "0123456789abcdef", 1); 
+	if (!ptr)
+		return (ft_putchar("0x")); 
+	return (ft_putchar("0x") + ft_putnbr_base_fd(ptr, "0123456789abcdef", 0, 1));
 }
 
 char    *ft_strchr(const char *s, int c)
@@ -25,4 +26,23 @@ int	ft_strlen(const char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
+}
+
+int	ft_unsigned(unsigned int nb, int fd)
+{
+	int count;
+
+	count = 0;
+	if (nb >= 0 && nb < 10)
+	{
+		nb += '0';
+		count += ft_putchar_fd(nb, 1);
+	}
+	else
+	{
+		count += ft_unsigned(nb / 10, 1);
+		nb = nb % 10 + '0';
+		count += ft_putchar_fd(nb, 1);
+	}
+	return (count);
 }

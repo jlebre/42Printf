@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int check(char c, va_list arg)
 {
@@ -24,8 +24,8 @@ static int check(char c, va_list arg)
         return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789", 0, 1));
     else if (c == 'i')
         return (ft_putnbr_fd(va_arg(arg, int), 0, 1));
-    else if (c == 'u') //unsigned decimal
-        return (1);
+    else if (c == 'u') 
+        return (ft_unsigned(va_arg(arg, int), 1);
     else if (c == 'x')
         return (ft_putnbr_base_fd(va_arg(arg, int), "0123456789abcdef", 0, 1));
     else if (c == 'X')
