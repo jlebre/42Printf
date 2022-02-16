@@ -1,19 +1,19 @@
 #include "ft_printf.h"
 
-int	ft_putpointer_fd(char *ptr, int fd)
+int	ft_putpointer_fd(unsigned long ptr, int fd)
 {
 	if (!ptr)
-		return (ft_putchar("0x")); 
-	return (ft_putchar("0x") + ft_putnbr_base_fd(ptr, "0123456789abcdef", 0, 1));
+		return (write(fd, "0x0", 3)); 
+	return (write(fd, "0x", 2) + ft_putnbr_base_fd((int)ptr, "0123456789abcdef", 0, 1));
 }
 
-char    *ft_strchr(const char *s, int c)
+int   ft_strchr(const char *s, int c)
 {
     while (*s)
     {
         if (*s == (char)c)
-            return ((char*)s);
-        *s++;
+            return (1);
+        s++;
     }
     return (0);
 }
@@ -40,9 +40,9 @@ int	ft_unsigned(unsigned int nb, int fd)
 	}
 	else
 	{
-		count += ft_unsigned(nb / 10, 1);
+		count += ft_unsigned(nb / 10, fd);
 		nb = nb % 10 + '0';
-		count += ft_putchar_fd(nb, 1);
+		count += ft_putchar_fd(nb, fd);
 	}
 	return (count);
 }
